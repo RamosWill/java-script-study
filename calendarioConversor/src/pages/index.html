@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conversor de dias para anos</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Conversor de dias para anos</h1>
+      <div>
+        <label for="">Insira a quantidade de dias:</label>
+        <input type="text" id="dias" />
+        <button id="confirm">Confirmar</button>
+      </div>
+      <h3>Convertendo para anos, temos:</h3>
+      <p id="parag">...</p>
+    </main>
+
+    <script>
+        function calculo(dias) {
+        let res = Number((dias * 0.002737851).toFixed(2));
+        return res;
+      }
+
+      let botao = document.getElementById("confirm")
+      let numero = document.getElementById("dias")
+      let texto = document.getElementById("parag")
+      
+      
+      
+      botao.addEventListener("click", function() {
+        let inputValue = numero.value
+        let anos = calculo(inputValue);
+
+        if (isNaN(inputValue) || inputValue < 0) {
+            texto.innerHTML = "ERRO! Insira um número válido."
+        } else {
+        texto.innerHTML = anos + " anos!";}
+      });
+
+      
+    </script>
+  </body>
+</html>
