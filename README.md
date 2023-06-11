@@ -1,2 +1,2 @@
 # java-script-study
-Estudos de JavaScript
+JavaScript study on web
